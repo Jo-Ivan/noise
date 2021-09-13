@@ -1,18 +1,19 @@
-import "bulma/css/bulma.min.css";
+import { Route } from "react-router-dom";
 import Header from "./components/layout/Header";
-import Search from "./components/search/Search";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Journal from "./components/journal/Journal";
+
+import "bulma/css/bulma.min.css";
 
 const App = () => {
   return (
-    <section className="hero is-fullheight">
-      <div className="hero-head">
-        <div className="container">
-          <Header />
-        </div>
-      </div>
-
-      <Search />
-    </section>
+    <div className="container">
+      <Header />
+      <Route path="/" exact component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/journal" component={Journal} />
+    </div>
   );
 };
 

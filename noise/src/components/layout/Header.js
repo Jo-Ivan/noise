@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isBurgerActive, setisBurgerActive] = useState(false);
@@ -6,9 +7,9 @@ const Header = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
+        <Link className="navbar-item" to="/">
           Home
-        </a>
+        </Link>
 
         <button
           onClick={() => {
@@ -27,8 +28,12 @@ const Header = () => {
 
       <div id="navbar-main" className={`navbar-menu ${isBurgerActive ? "is-active" : ""}`}>
         <div className="navbar-end">
-          <div className="navbar-item">Journal</div>
-          <div className="navbar-item">About</div>
+          <Link className="navbar-item" to="/journal">
+            Journal
+          </Link>
+          <Link className="navbar-item" to="/about">
+            About
+          </Link>
         </div>
       </div>
     </nav>

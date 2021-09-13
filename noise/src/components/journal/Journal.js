@@ -1,7 +1,7 @@
 import React from "react";
 
 const Journal = () => {
-  return <div></div>;
+  return <div>Journal</div>;
 };
 
 export default Journal;
