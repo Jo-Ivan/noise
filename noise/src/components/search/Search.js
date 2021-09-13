@@ -1,6 +1,22 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Search = () => {
+  const url =
+    "https://api.discogs.com/database/search?q=Nirvana&key=csNhJKxoebnQBUXTJsPi&secret=nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE";
+
+  const [songs, setSongs] = useState({});
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setSongs(res.data);
+    });
+  }, []);
+
+  console.log(songs);
+
+  if (!songs) return null;
+
   return (
     <div className="hero-body">
       <div className="container has-text-centered">
