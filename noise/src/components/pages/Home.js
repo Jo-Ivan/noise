@@ -1,7 +1,6 @@
-import React from "react";
 import Search from "../search/Search";
 
-const Home = () => {
+const Home = ({ onSubmit }) => {
   return (
     <>
       <section className="hero is-fullheight-with-navbar">
@@ -9,7 +8,7 @@ const Home = () => {
           <div className="container"></div>
         </div>
 
-        <Search />
+        <Search onSubmit={onSubmit} />
       </section>
     </>
   );
