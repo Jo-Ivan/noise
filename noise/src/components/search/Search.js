@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Search = () => {
-  const url =
-    "https://api.discogs.com/database/search?q=Nirvana&key=csNhJKxoebnQBUXTJsPi&secret=nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE";
+  const searchOptions = {
+    key: "csNhJKxoebnQBUXTJsPi",
+    secret: "nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE",
+    api: "https://api.discogs.com/database",
+    endpoint: "/search"
+  };
+
+  const url = `${searchOptions.api}${searchOptions.endpoint}?q=Nirvana&key=${searchOptions.key}&secret=${searchOptions.secret}`;
 
   const [songs, setSongs] = useState({});
 
