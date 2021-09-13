@@ -15,7 +15,9 @@ const Search = ({ onSubmit }) => {
                 />
               </p>
               <p className="control">
-                <button className="button is-info">Search</button>
+                <button type="submit" className="button is-info">
+                  Search
+                </button>
               </p>
             </form>
           </div>

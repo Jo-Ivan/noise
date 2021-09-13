@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
@@ -20,6 +20,8 @@ const App = () => {
     endpoint: "/search"
   };
 
+  let history = useHistory();
+
   const getResults = () => {
     const apiURL = `${searchOptions.api}${searchOptions.endpoint}?q=${searchString}&key=${searchOptions.key}&secret=${searchOptions.secret}`;
 
@@ -29,6 +31,7 @@ const App = () => {
         console.log(res.results);
         setResults(res.results);
       });
+    history.push("/search-results");
   };
 
   console.log(`results: ${results}`);
@@ -52,7 +55,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
-      <Route path="/search-results" component={() => <SearchResults />} />
+      <Route path="/search-results" component={() => <SearchResults results={results} />} />
       <Route path="/journal" component={Journal} />
       <Route path="/about" component={About} />
     </div>

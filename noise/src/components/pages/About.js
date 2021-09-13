@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div>
-      <h1>TESTTT</h1>
+      <h1>About Noise</h1>
     </div>
   );
 };
