@@ -1,8 +1,18 @@
+import "bulma/css/bulma.min.css";
+import Header from "./components/layout/Header";
+import Search from "./components/search/Search";
+
 const App = () => {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <section className="hero is-fullheight">
+      <div className="hero-head">
+        <div className="container">
+          <Header />
+        </div>
+      </div>
+
+      <Search />
+    </section>
   );
 };
 
