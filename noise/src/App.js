@@ -32,7 +32,9 @@ const App = () => {
   console.log(`results: ${results}`);
 
   useEffect(() => {
-    getResults(searchString);
+    if (searchString !== "") {
+      getResults(searchString);
+    }
   }, [searchString]);
 
   const searchFormSubmitHandler = (e) => {
