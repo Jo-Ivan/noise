@@ -1,6 +1,4 @@
 const Search = ({ onSubmit }) => {
-  console.log(onSubmit);
-
   return (
     <div className="hero-body">
       <div className="container has-text-centered">

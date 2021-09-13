@@ -4,6 +4,8 @@ import { Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Journal from "./components/journal/Journal";
+import About from "./components/pages/About";
+import SearchResults from "./components/search/SearchResults";
 
 import "bulma/css/bulma.min.css";
 
@@ -50,7 +52,9 @@ const App = () => {
     <div className="container">
       <Header />
       <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
+      <Route path="/search-results" component={() => <SearchResults />} />
       <Route path="/journal" component={Journal} />
+      <Route path="/about" component={About} />
     </div>
   );
 };
