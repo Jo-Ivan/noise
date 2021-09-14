@@ -17,10 +17,12 @@ const App = () => {
   let history = useHistory();
 
   const addEntry = (entry) => {
-    console.log("test");
-    // const updatedJournalList = [...entries, entry];
-    // setEntries(updatedJournalList);
+    console.log(entry);
+    const updatedJournalList = [...entries, entry];
+    setEntries(updatedJournalList);
   };
+
+  console.log(entries);
 
   const searchOptions = {
     key: "csNhJKxoebnQBUXTJsPi",
@@ -52,8 +54,6 @@ const App = () => {
 
     history.push("/search-results");
   };
-
-  console.log(`results: ${results}`);
 
   useEffect(() => {
     if (searchString !== "") {

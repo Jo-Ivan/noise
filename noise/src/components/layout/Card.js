@@ -1,17 +1,27 @@
 import React from "react";
 
 const Card = ({ result, addEntry }) => {
-  const testFunc = () => {
-    console.log("hello");
-  };
-
   const saveButtonHandler = (e) => {
     e.preventDefault();
-    const titleName = result.title;
+    const albumName = result.title;
+    const albumImage = result.cover_image;
+    const albumYear = result.year;
+    const albumGenre = result.genre;
+    const albumCountry = result.country;
+    const albumFormat = result.format;
+    const albumId = result.id;
 
     const newEntry = {
-      title: titleName
+      albumId,
+      album: albumName,
+      image: albumImage,
+      year: albumYear,
+      genre: albumGenre,
+      country: albumCountry,
+      format: albumFormat
     };
+
+    addEntry(newEntry);
   };
 
   return (
