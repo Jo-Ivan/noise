@@ -23,7 +23,9 @@ const App = () => {
   let history = useHistory();
 
   const getResults = () => {
-    const apiURL = `${searchOptions.api}${searchOptions.endpoint}?q=${searchString}&key=${searchOptions.key}&secret=${searchOptions.secret}`;
+    const apiURL = `${searchOptions.api}${searchOptions.endpoint}?q=${searchString}&type=release&format=album&key=${searchOptions.key}&secret=${searchOptions.secret}`;
+
+    // https://api.discogs.com/database/search?q=cortex?type=master&key=csNhJKxoebnQBUXTJsPi&secret=nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE
 
     fetch(apiURL)
       .then((res) => res.json())
@@ -31,6 +33,17 @@ const App = () => {
         console.log(res.results);
         setResults(res.results);
       });
+
+    // bb1c4d33764f3967ed84b4199bd3da6d
+
+    // const apiURL2 = `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchString}&api_key=bb1c4d33764f3967ed84b4199bd3da6d&format=json`;
+
+    // fetch(apiURL2)
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     console.log(res.results.trackmatches.track);
+    //     setResults(res.results.trackmatches.track);
+    //   });
     history.push("/search-results");
   };
 

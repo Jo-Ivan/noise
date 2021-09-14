@@ -5,9 +5,11 @@ const SearchResults = ({ results }) => {
     <div>
       <h1>Search Results</h1>
 
-      {results.map((result) => {
-        return <Card result={result} />;
-      })}
+      <div className="columns is-multiline">
+        {results.map((result) => {
+          return <Card key={result.id} result={result} />;
+        })}
+      </div>
     </div>
   );
 };
