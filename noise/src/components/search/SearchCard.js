@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ result, addEntry }) => {
+const SearchCard = ({ result, addEntry }) => {
   const saveButtonHandler = (e) => {
     e.preventDefault();
 
@@ -66,4 +66,4 @@ const Card = ({ result, addEntry }) => {
   );
 };
 
-export default Card;
+export default SearchCard;

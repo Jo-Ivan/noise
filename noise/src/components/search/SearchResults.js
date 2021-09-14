@@ -1,4 +1,4 @@
-import Card from "../layout/Card";
+import SearchCard from "./SearchCard";
 
 const SearchResults = ({ results, addEntry }) => {
   return (
@@ -7,7 +7,7 @@ const SearchResults = ({ results, addEntry }) => {
 
       <div className="columns is-multiline">
         {results.map((result) => {
-          return <Card key={result.id} result={result} addEntry={addEntry} />;
+          return <SearchCard key={result.id} result={result} addEntry={addEntry} />;
         })}
       </div>
     </div>

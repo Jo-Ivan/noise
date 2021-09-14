@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import Journal from "./components/journal/Journal";
 import About from "./components/pages/About";
 import SearchResults from "./components/search/SearchResults";
+import Footer from "./components/layout/Footer";
 
 import "bulma/css/bulma.min.css";
 
@@ -16,8 +17,15 @@ const App = () => {
 
   let history = useHistory();
 
-  const addEntry = (entry) => {
-    const updatedJournalList = [...entries, entry];
+  const addEntry = (addedEntry) => {
+    entries.map((entry) => {
+      if (entry.id === addedEntry.id) {
+        console.log("Not added to journal due to ID conflict");
+        setEntries(entries);
+      } else {
+      }
+    });
+    const updatedJournalList = [...entries, addedEntry];
     setEntries(updatedJournalList);
   };
 
@@ -60,12 +68,13 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container is-fluid">
         <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
         <Route path="/search-results" component={() => <SearchResults results={results} addEntry={addEntry} />} />
         <Route path="/journal" component={() => <Journal entries={entries} />} />
         <Route path="/about" component={About} />
       </div>
+      <Footer />
     </>
   );
 };
