@@ -62,7 +62,10 @@ const App = () => {
       <Header />
       <div className="container is-fluid">
         <Route path="/" exact render={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
-        <Route path="/search-results" render={() => <SearchResults results={results} addEntry={addEntry} />} />
+        <Route
+          path="/search-results"
+          render={() => <SearchResults results={results} addEntry={addEntry} onSubmit={searchFormSubmitHandler} />}
+        />
         <Route path="/journal" exact render={() => <Journal entries={entries} />} />
         <Route
           path="/journal/:entryId"
