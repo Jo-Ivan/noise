@@ -19,6 +19,7 @@ const App = () => {
   let history = useHistory();
 
   const addEntry = (addedEntry) => {
+    console.log("You added a new album to your journal list!");
     const updatedJournalList = [...entries, addedEntry];
     setEntries(updatedJournalList);
   };

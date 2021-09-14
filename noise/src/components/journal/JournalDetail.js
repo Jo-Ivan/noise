@@ -44,8 +44,8 @@ const JournalDetail = ({ entries, entryId }) => {
           </div>
           <form>
             <textarea className="textarea is-primary" placeholder="Write a note"></textarea>
-            <div class="control">
-              <button class="button is-primary is-fullwidth">Submit</button>
+            <div className="control">
+              <button className="button is-primary is-fullwidth">Submit</button>
             </div>
           </form>
         </div>
