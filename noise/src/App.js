@@ -14,14 +14,14 @@ const App = () => {
   const [journal, setJournal] = useState([]);
   const [searchString, setSearchString] = useState("");
 
+  let history = useHistory();
+
   const searchOptions = {
     key: "csNhJKxoebnQBUXTJsPi",
     secret: "nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE",
     api: "https://api.discogs.com/database",
     endpoint: "/search"
   };
-
-  let history = useHistory();
 
   const getResults = () => {
     const apiURL = `${searchOptions.api}${searchOptions.endpoint}?q=${searchString}&type=release&format=album&key=${searchOptions.key}&secret=${searchOptions.secret}`;
@@ -35,8 +35,6 @@ const App = () => {
         setResults(res.results);
       });
 
-    // bb1c4d33764f3967ed84b4199bd3da6d
-
     // const apiURL2 = `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchString}&api_key=bb1c4d33764f3967ed84b4199bd3da6d&format=json`;
 
     // fetch(apiURL2)
@@ -45,6 +43,7 @@ const App = () => {
     //     console.log(res.results.trackmatches.track);
     //     setResults(res.results.trackmatches.track);
     //   });
+
     history.push("/search-results");
   };
 

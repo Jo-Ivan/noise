@@ -1,6 +1,10 @@
 import React from "react";
 
 const Card = ({ result }) => {
+  const testFunc = () => {
+    console.log("hello");
+  };
+
   return (
     <div className="column is-4">
       <div className="card">
@@ -32,8 +36,8 @@ const Card = ({ result }) => {
             </div>
           </div>
         </div>
-        <footer class="card-footer">
-          <button href="#" className="card-footer-item button is-primary">
+        <footer className="card-footer">
+          <button onClick={testFunc} className="card-footer-item button is-primary">
             Save album to journal
           </button>
         </footer>

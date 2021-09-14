@@ -4,7 +4,7 @@ const Search = ({ onSubmit }) => {
       <div className="container has-text-centered">
         <div className="column is-6 is-offset-3">
           <h1 className="title">noise</h1>
-          <h2 class="subtitle">Album note-taking made easy.</h2>
+          <h2 className="subtitle">Album note-taking made easy.</h2>
           <div className="box">
             <form onSubmit={onSubmit} className="field is-grouped">
               <p className="control is-expanded">
