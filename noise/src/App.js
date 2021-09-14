@@ -11,6 +11,7 @@ import "bulma/css/bulma.min.css";
 
 const App = () => {
   const [results, setResults] = useState([]);
+  const [journal, setJournal] = useState([]);
   const [searchString, setSearchString] = useState("");
 
   const searchOptions = {
@@ -65,13 +66,15 @@ const App = () => {
   };
 
   return (
-    <div className="container">
+    <>
       <Header />
-      <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
-      <Route path="/search-results" component={() => <SearchResults results={results} />} />
-      <Route path="/journal" component={Journal} />
-      <Route path="/about" component={About} />
-    </div>
+      <div className="container">
+        <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
+        <Route path="/search-results" component={() => <SearchResults results={results} />} />
+        <Route path="/journal" component={Journal} />
+        <Route path="/about" component={About} />
+      </div>
+    </>
   );
 };
 

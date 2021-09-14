@@ -5,10 +5,10 @@ const Header = () => {
   const [isBurgerActive, setisBurgerActive] = useState(false);
 
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav id="nav" className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
-          Home
+          <p className="is-size-5">noise</p>
         </Link>
 
         <button

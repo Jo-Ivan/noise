@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eff0eb;
 }
 
 code {
@@ -21,3 +22,11 @@ code {
 .card-footer {
   margin-top: auto;
 }
+
+
+#nav {
+  background-color: #d0d1cd;
+}
+
+
+
