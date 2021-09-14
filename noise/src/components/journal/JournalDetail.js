@@ -1,8 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const JournalDetail = ({ entries, entryId }) => {
-  const [entry, setEntry] = useState({});
-
   const entryIdToNum = parseInt(entryId);
 
   const entryChosen = entries.find((element) => element.albumId === entryIdToNum);
@@ -11,6 +10,10 @@ const JournalDetail = ({ entries, entryId }) => {
 
   return (
     <div>
+      <Link to={`/journal`} className="button">
+        Go back
+      </Link>
+      <h1 className="is-size-1">Journal Entry for {entryChosen.album}</h1>
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
@@ -39,6 +42,12 @@ const JournalDetail = ({ entries, entryId }) => {
               <p>{entryChosen.country}</p>
             </div>
           </div>
+          <form>
+            <textarea className="textarea is-primary" placeholder="Write a note"></textarea>
+            <div class="control">
+              <button class="button is-primary is-fullwidth">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
