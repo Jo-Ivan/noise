@@ -18,13 +18,6 @@ const App = () => {
   let history = useHistory();
 
   const addEntry = (addedEntry) => {
-    entries.map((entry) => {
-      if (entry.id === addedEntry.id) {
-        console.log("Not added to journal due to ID conflict");
-        setEntries(entries);
-      } else {
-      }
-    });
     const updatedJournalList = [...entries, addedEntry];
     setEntries(updatedJournalList);
   };
