@@ -2,7 +2,6 @@ import React from "react";
 import JournalCard from "./JournalCard";
 
 const Journal = ({ entries }) => {
-  console.log(entries);
   return (
     <div className="full-height">
       <h1 className="is-size-1">Journal Entries</h1>

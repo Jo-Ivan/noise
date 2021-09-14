@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const JournalCard = ({ result }) => {
   return (
@@ -18,6 +18,11 @@ const JournalCard = ({ result }) => {
             </div>
           </div>
         </div>
+        <footer className="card-footer">
+          <Link to={`journal/${result.albumId}`} className="card-footer-item button is-primary">
+            Write a note about this album
+          </Link>
+        </footer>
       </div>
     </div>
   );

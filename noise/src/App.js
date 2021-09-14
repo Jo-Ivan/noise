@@ -4,6 +4,7 @@ import { Route, useHistory } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Home from "./components/pages/Home";
 import Journal from "./components/journal/Journal";
+import JournalDetail from "./components/journal/JournalDetail";
 import About from "./components/pages/About";
 import SearchResults from "./components/search/SearchResults";
 import Footer from "./components/layout/Footer";
@@ -21,8 +22,6 @@ const App = () => {
     const updatedJournalList = [...entries, addedEntry];
     setEntries(updatedJournalList);
   };
-
-  console.log(entries);
 
   const searchOptions = {
     key: "csNhJKxoebnQBUXTJsPi",
@@ -62,10 +61,14 @@ const App = () => {
     <>
       <Header />
       <div className="container is-fluid">
-        <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
-        <Route path="/search-results" component={() => <SearchResults results={results} addEntry={addEntry} />} />
-        <Route path="/journal" component={() => <Journal entries={entries} />} />
-        <Route path="/about" component={About} />
+        <Route path="/" exact render={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
+        <Route path="/search-results" render={() => <SearchResults results={results} addEntry={addEntry} />} />
+        <Route path="/journal" exact render={() => <Journal entries={entries} />} />
+        <Route
+          path="/journal/:entryId"
+          render={(routerProps) => <JournalDetail entries={entries} entryId={routerProps.match.params.entryId} />}
+        />
+        <Route path="/about" render={About} />
       </div>
       <Footer />
     </>
