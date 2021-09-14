@@ -1,8 +1,17 @@
 import React from "react";
 
-const Card = ({ result }) => {
+const Card = ({ result, addEntry }) => {
   const testFunc = () => {
     console.log("hello");
+  };
+
+  const saveButtonHandler = (e) => {
+    e.preventDefault();
+    const titleName = result.title;
+
+    const newEntry = {
+      title: titleName
+    };
   };
 
   return (
@@ -37,7 +46,7 @@ const Card = ({ result }) => {
           </div>
         </div>
         <footer className="card-footer">
-          <button onClick={testFunc} className="card-footer-item button is-primary">
+          <button onClick={saveButtonHandler} className="card-footer-item button is-primary">
             Save album to journal
           </button>
         </footer>
