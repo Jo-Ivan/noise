@@ -3,6 +3,7 @@ import React from "react";
 const Card = ({ result, addEntry }) => {
   const saveButtonHandler = (e) => {
     e.preventDefault();
+
     const albumName = result.title;
     const albumImage = result.cover_image;
     const albumYear = result.year;

@@ -17,7 +17,6 @@ const App = () => {
   let history = useHistory();
 
   const addEntry = (entry) => {
-    console.log(entry);
     const updatedJournalList = [...entries, entry];
     setEntries(updatedJournalList);
   };
@@ -37,7 +36,6 @@ const App = () => {
     fetch(apiURL)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.results);
         setResults(res.results);
       });
 
@@ -65,7 +63,7 @@ const App = () => {
       <div className="container">
         <Route path="/" exact component={() => <Home lastSearch={searchString} onSubmit={searchFormSubmitHandler} />} />
         <Route path="/search-results" component={() => <SearchResults results={results} addEntry={addEntry} />} />
-        <Route path="/journal" component={Journal} entries={entries} />
+        <Route path="/journal" component={() => <Journal entries={entries} />} />
         <Route path="/about" component={About} />
       </div>
     </>
