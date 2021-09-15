@@ -35,8 +35,8 @@ const App = () => {
   };
 
   const searchOptions = {
-    key: "csNhJKxoebnQBUXTJsPi",
-    secret: "nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE",
+    key: `${process.env.REACT_APP_DISCOGS_API_KEY}`,
+    secret: `${process.env.REACT_APP_DISCOGS_API_SECRET}`,
     api: "https://api.discogs.com/database",
     endpoint: "/search"
   };
