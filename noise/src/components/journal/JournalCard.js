@@ -15,6 +15,8 @@ const JournalCard = ({ result }) => {
               <p className="title is-4">
                 {result.album} - {result.year}
               </p>
+              <p className="is-size-5 has-text-weight-medium">Notes:</p>
+              <p>{result.albumNote}</p>
             </div>
           </div>
         </div>

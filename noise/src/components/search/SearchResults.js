@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SearchCard from "./SearchCard";
 
 const SearchResults = ({ results, addEntry, onSubmit }) => {

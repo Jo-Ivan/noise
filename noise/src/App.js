@@ -24,6 +24,16 @@ const App = () => {
     setEntries(updatedJournalList);
   };
 
+  const addNoteToEntry = (note, albumId) => {
+    console.log("You added a note to the entry!");
+    // const entryChosen = entries.filter((element) => element.albumId === albumId);
+
+    // const updatedJournalList = [...entries, entryChosen];
+    // setEntries(updatedJournalList);
+
+    // console.log(albumId);
+  };
+
   const searchOptions = {
     key: "csNhJKxoebnQBUXTJsPi",
     secret: "nzojynjBCiQyyuDJWgIsTLjdUtHNFPXE",
@@ -58,6 +68,8 @@ const App = () => {
     searchInputElement.value = "";
   };
 
+  console.log(results);
+
   return (
     <>
       <Header />
@@ -70,7 +82,13 @@ const App = () => {
         <Route path="/journal" exact render={() => <Journal entries={entries} />} />
         <Route
           path="/journal/:entryId"
-          render={(routerProps) => <JournalDetail entries={entries} entryId={routerProps.match.params.entryId} />}
+          render={(routerProps) => (
+            <JournalDetail
+              entries={entries}
+              entryId={routerProps.match.params.entryId}
+              addNoteToEntry={addNoteToEntry}
+            />
+          )}
         />
         <Route path="/about" render={About} />
       </div>

@@ -1,12 +1,19 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const JournalDetail = ({ entries, entryId }) => {
+const JournalDetail = ({ entries, entryId, addNoteToEntry }) => {
   const entryIdToNum = parseInt(entryId);
 
   const entryChosen = entries.find((element) => element.albumId === entryIdToNum);
 
-  console.log(entryChosen);
+  const saveButtonHandler = (e) => {
+    e.preventDefault();
+    const inputElement = document.getElementById("item-input");
+    const albumNote = inputElement.value;
+
+    entryChosen.albumNote = albumNote;
+
+    addNoteToEntry(albumNote, entryChosen.albumId);
+  };
 
   return (
     <div>
@@ -42,12 +49,13 @@ const JournalDetail = ({ entries, entryId }) => {
               <p>{entryChosen.country}</p>
             </div>
           </div>
-          <form>
-            <textarea className="textarea is-primary" placeholder="Write a note"></textarea>
-            <div className="control">
-              <button className="button is-primary is-fullwidth">Submit</button>
-            </div>
-          </form>
+
+          <textarea id="item-input" className="textarea is-primary" placeholder="Write a note"></textarea>
+          <div className="control">
+            <button onClick={saveButtonHandler} className="button is-primary is-fullwidth">
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>

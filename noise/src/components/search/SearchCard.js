@@ -11,6 +11,7 @@ const SearchCard = ({ result, addEntry }) => {
     const albumCountry = result.country;
     const albumFormat = result.format;
     const albumId = Math.floor(Math.random() * 1000) + result.id;
+    const albumNote = "";
 
     const newEntry = {
       albumId,
@@ -19,7 +20,8 @@ const SearchCard = ({ result, addEntry }) => {
       year: albumYear,
       genre: albumGenre,
       country: albumCountry,
-      format: albumFormat
+      format: albumFormat,
+      albumNote
     };
 
     addEntry(newEntry);
